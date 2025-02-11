@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerAPI;
 use App\Http\Controllers\UniversidadController;
 use App\Http\Controllers\CarreraController;
+use App\Http\Controllers\GrupoController;
 
 Route::get('/', [ControllerAPI::class, 'getData'])->name('alumno.index');
 Route::get('alumnos/create', [ControllerAPI::class, 'create' ])->name('alumno.create');
@@ -32,10 +33,10 @@ Route::delete('carreras/{id_carrera}', [CarreraController::class, 'delete' ])->n
 Route::get('grupos', [GrupoController::class, 'index'])->name('grupo.index');
 Route::get('grupos/create', [GrupoController::class, 'create' ])->name('grupo.create');
 Route::post('grupos', [GrupoController::class, 'store' ])->name('grupo.store');
-Route::get('grupos/{mostrar}', [GrupoController::class, 'show'] )->name('grupo.show');
-Route::get('grupos/{editar}/edit', [GrupoController::class, 'edit' ])->name('grupo.edit');
-Route::put('grupos/{editar}', [GrupoController::class, 'update' ])->name('grupo.update');
-Route::delete('grupos/{eliminar}', [GrupoController::class, 'destroy' ])->name('grupo.destroy');
+Route::get('grupos/{id_grupo}', [GrupoController::class, 'show'] )->name('grupo.show');
+Route::get('grupos/{id_grupo}/edit', [GrupoController::class, 'edit' ])->name('grupo.edit');
+Route::put('grupos/{id_grupo}', [GrupoController::class, 'update' ])->name('grupo.update');
+Route::delete('grupos/{id_grupo}', [GrupoController::class, 'delete' ])->name('grupo.delete');
 
 
 

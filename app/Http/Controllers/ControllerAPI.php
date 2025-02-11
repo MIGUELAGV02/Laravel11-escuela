@@ -40,7 +40,16 @@ class ControllerAPI extends Controller
     }
 
     public function create(){
-        return view('alumno.create');
+        $responseUniversidad = Http::get('http://localhost:3000/api/universidades/');
+        $un = $responseUniversidad->json();
+    
+        $responseCarrera = Http::get('http://localhost:3000/api/carreras');
+        $ca = $responseCarrera->json();
+
+        $responseGrupo = Http::get('http://localhost:3000/api/grupos/');
+        $gr = $responseGrupo->json();
+
+        return view('alumno.create', compact('un','ca','gr'));
     }
     
     public function store(Request $request)

@@ -34,7 +34,7 @@
                     <a class="nav-link text-white" href="{{route('carrera.index')}}"><i class="fas fa-heart"></i> Carreras</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><i class="fas fa-heart"></i> Grupos</a>
+                    <a class="nav-link text-white" href="{{route('grupo.index')}}"><i class="fas fa-heart"></i> Grupos</a>
                 </li>
             </ul>
         </nav>

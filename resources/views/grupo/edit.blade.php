@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Editar Carrera')
+@section('title', 'Editar')
 
 @section('content')
     <div class="container mt-5">
@@ -8,10 +8,10 @@
             <div class="col-md-8 offset-md-2">
                 <div class="card shadow-lg">
                     <div class="card-header bg-dark text-white">
-                        <h3 class="text-center">Editar Carrera</h3>
+                        <h3 class="text-center">Editar Grupo</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('carrera.update', $xd['id_carrera']) }}" method="POST">
+                        <form action="{{ route('grupo.update', $xd['id_grupo']) }}" method="POST">
                             @csrf 
                             @method('put')
                             <div class="table-responsive">
@@ -20,6 +20,12 @@
                                         <th>Nombre</th>
                                         <td>
                                             <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $xd['nombre'] }}" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Clave</th>
+                                        <td>
+                                            <input type="text" class="form-control" id="clave" name="clave" value="{{ $xd['clave'] }}" required>
                                         </td>
                                     </tr>
                                     <tr>
@@ -32,13 +38,13 @@
                                         </td>
                                     </tr>   
                                     <tr>
-                                        <th>Universidad</th>
+                                        <th>Carrera</th>
                                         <td>
-                                            <select class="form-select" id="universidades" name="universidades" required>
-                                                @foreach ($universidades as $universidad)
-                                                    <option value="{{ $universidad['id_universidad'] }}" 
-                                                        {{ $universidad['id_universidad'] == $xd['universidades'] ? 'selected' : '' }}>
-                                                        {{ $universidad['nombre'] }}
+                                            <select class="form-select" id="carrera" name="carrera" required>
+                                                @foreach ($carreras as $car)
+                                                    <option value="{{ $car['id_carrera'] }}" 
+                                                        {{ $car['id_carrera'] == $xd['carreras'] ? 'selected' : '' }}>
+                                                        {{ $car['nombre'] }}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -50,7 +56,7 @@
                                 <button type="submit" class="btn btn-success">
                                     <i class="bi bi-save"></i> Actualizar 
                                 </button>
-                                <a href="{{ route('carrera.index') }}" class="btn btn-primary">
+                                <a href="{{ route('grupo.index') }}" class="btn btn-primary">
                                     <i class="bi bi-arrow-left"></i> Regresar
                                 </a>
                             </div>

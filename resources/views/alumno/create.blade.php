@@ -51,26 +51,40 @@
                                                 <option value="" selected disabled>Selecciona un genero</option>
                                                 <option value="F">Femenino</option>
                                                 <option value="M">Masculino</option>
-                                                <option value="X">Gey</option>
                                             </select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Universidad</th>
                                         <td>
-                                            <input type="text" class="form-control" id="id_universidad2" name="id_universidad2" required>
+                                            <select class="form-control" id="id_universidad2" name="id_universidad2" required>
+                                                <option value="">Seleccione una carrera</option>
+                                                @foreach ($un as $univ)
+                                                    <option value="{{ $univ['id_universidad'] }}">{{ $univ['nombre'] }}</option>
+                                                @endforeach
+                                            </select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Carrera</th>
                                         <td>
-                                            <input type="text" class="form-control" id="id_carrera2" name="id_carrera2" required>
+                                            <select class="form-control" id="id_carrera2" name="id_carrera2" required>
+                                                <option value="">Seleccione una carrera</option>
+                                                @foreach ($ca as $car)
+                                                    <option value="{{ $car['id_carrera'] }}">{{ $car['nombre'] }}</option>
+                                                @endforeach
+                                            </select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>Grupo</th>
                                         <td>
-                                            <input type="text" class="form-control" id="id_grupo2" name="id_grupo2" required>
+                                            <select class="form-control" id="id_grupo2" name="id_grupo2" required>
+                                                <option value="">Seleccione un Grupo</option>
+                                                @foreach ($gr as $sd)
+                                                    <option value="{{ $sd['id_grupo'] }}">{{ $sd['nombre'] }}</option>
+                                                @endforeach
+                                            </select>
                                         </td>
                                     </tr>
                                     
